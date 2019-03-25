@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let pomme of liste">
+    {{pomme.id}}
+    <a [routerLink]="['/pomme', pomme.id]">{{pomme.name}}</a>
+  </li>
+</ul>
+
+<a [routerLink]="['/pommes', currentPage - 1]" [hidden]="currentPage === 0">Page précédente</a>&nbsp;|&nbsp; 
+<a [routerLink]="['/pommes', currentPage + 1]" [hidden]="liste.length === 0">Page suivante</a>
